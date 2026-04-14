@@ -61,8 +61,16 @@ const Navbar = () => {
                         </span>
                     )}
                 </NavLink>
+                <NavLink
+                    className={({ isActive }) =>
+                        `relative p-2 rounded-2xl transition-all ${isActive ? 'bg-pink-400 text-white' : 'hover:bg-gray-100'}`
+                    }
+                    to={'/profile'}
+                >
 
-                <CgProfile className="cursor-pointer hover:text-black" />
+                    <CgProfile className="cursor-pointer hover:text-black" />
+                </NavLink>
+
 
                 {/* Mobile Menu Button */}
                 <button className='md:hidden text-2xl' onClick={() => setIsOpen(!isOpen)}>

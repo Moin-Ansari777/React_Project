@@ -12,6 +12,7 @@ import { Provider } from 'react-redux'
 import store from '../store/store.js'
 import Cart from './Page/Cart.jsx'
 import CheckOut from './Page/CheckOut.jsx'
+import Profile from './Page/Profile.jsx'
 
 const route = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const route = createBrowserRouter([
       {
         path: '/cart',
         element : <Cart/>
+      },
+      {
+        path : '/profile',
+        element : <Profile />
       },
       {
         path: '/checkout/:productId?',

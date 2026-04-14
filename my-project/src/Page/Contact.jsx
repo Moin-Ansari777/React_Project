@@ -2,6 +2,9 @@ import React from 'react'
 import { FaLinkedin, FaTwitter, FaFacebook, FaWhatsapp, FaGithub, FaGitAlt, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Contact = () => {
+   const handleClick = (e)=>{
+    e.preventDefault();
+    }
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
             <div className="max-w-6xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
@@ -30,7 +33,9 @@ const Contact = () => {
                             <label className="block text-sm font-semibold text-gray-700 mb-1">Message</label>
                             <textarea rows="4" placeholder="Leave us a message..." className="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition resize-none"></textarea>
                         </div>
-                        <button className="w-full bg-black hover:bg-blue-700 text-pink-500 font-bold py-4 rounded-xl shadow-lg shadow-pink-200 transition-all active:scale-95">
+                        <button 
+                        onClick={handleClick}
+                        className="w-full bg-black hover:bg-blue-700 text-pink-500 font-bold py-4 rounded-xl shadow-lg shadow-pink-200 transition-all active:scale-95">
                             Send Message
                         </button>
                     </form>

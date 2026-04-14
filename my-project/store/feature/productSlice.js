@@ -8,12 +8,19 @@ const initialState = {
     error: null,
     cart: [],
 }
-
+const userData = {
+    name: "Orhan",
+    username: "Orhan777",
+    phone: "+91 8535013309",
+    email: "okorhan786@gmail.com",
+    address: "MuzaffarNagar City, Uttar Pradesh, 251001"
+};
 // src/store/feature/productSlice.js
 const fetchData = createAsyncThunk('product/fetchData', async () => {
     // 1. Use https://
     // 2. Add / at the end if the first fix alone doesn't work
     const response = await axios.get('https://fakestoreapi.com/products')
+    console.log(response)
 
     return await response.data;
 });
@@ -64,6 +71,6 @@ const productSlice = createSlice({
 }
 )
 
-export { fetchData }
-export const { addToCart, removeFromCart,emptyCart } = productSlice.actions;
+export { fetchData, userData }
+export const { addToCart, removeFromCart, emptyCart } = productSlice.actions;
 export default productSlice.reducer;
